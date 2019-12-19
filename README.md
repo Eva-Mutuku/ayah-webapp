@@ -65,7 +65,12 @@ Ayah is a **nanny-family matching website** that helps nannies find families to 
   * Jquery
   * Markdown
 ​
-## To do 
+## Future Plans
+1. Moving all the data to a database.
+2. Include reviews for both nannies and families.
+3. Search button for nannies/families without having to fill in the form.
+4. Function to add files when registering 
+
 
 ## Known Bugs
 * No known bugs at the moment. We would however love to know if your encounter any bugs. Please reach out to [Email](mutileeva@gmail.com)

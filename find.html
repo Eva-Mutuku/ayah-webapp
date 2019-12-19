@@ -73,15 +73,23 @@
           </form>
           <div class="shadedarea">
             <h6>GENERAL INFORMATION</h6>
+          </div><br>
+          Age Range <select id="ageRange">
+            <option value="18">18-30</option>
+            <option value="26">31-40</option>
+            <option value="31">41-50</option>
+            <option value="51">51-60</option>
+          </select><br>
+            <div class="range-labels">
+              <fieldset>
+                <label for="rangeVal">Weekly Rate Range in Kes.:</label>
+                <input type ="range" max="25000" min="1000"
+                    oninput="document.getElementById('rangeValLabel').innerHTML = this.value;"
+                    step="5" name="rangeVal" id="rangeVal" value="">
+                </input>
+                <em id="rangeValLabel" style="font-style: normal;"></em>
+              </fieldset>
           </div>
-          <form id="generalInfo">
-            <div class="form-group">
-              <label for="ageRange">Age Range</label>
-              <input type="range" class="form-control-range" id="ageRange" min="18" max="75" />
-            </div>
-            <div class="form-group">
-              <label for="rateRange">Weekly Rate Range in KES</label>
-              <input type="range" class="form-control-range" id="rateRange" min="18" max="75" />
             </div>
             <div id="seekOrHire" class="form-group">
               <div class="form-check form-check-inline">
