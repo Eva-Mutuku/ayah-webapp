@@ -1,8 +1,25 @@
+let ayahAccounts = [];
 $(document).ready(function() {
-  //Opacity to 1 on clicking checkboxes
-  $("label#checked"):active {opacity:1;}
-  $("#checked"):visited {opacity:1;}
+  // Handle registration form data
+  $(".registrationform form").submit(function(event) {
+    let fullName = $("#fullName").val();
+    let emailAddress = $("#emailAddress").val();
+    let phoneNumber = $("#phoneNumber").val();
 
+    let seekOrHire = $("#seekOrHire :checked").val();
+    let residence = $("#residence :selected").val();
+
+    let readAgree = $("#readAgree :checked");
+
+    // Check that all checkboxes are checked
+    if (readAgree.length > 1) {
+      var newAccount = new AyahAccount(fullName, emailAddress, phoneNumber, seekOrHire, residence);
+      registerAccount(newAccount);
+      console.log(newAccount);
+    }
+
+    event.preventDefault();
+  });
   //Show househelp form upon clicking househelpForm button
   $(".househelpForm").click(function() {
     $(".househelpSubmitForm").show();
@@ -62,6 +79,21 @@ $(document).ready(function() {
   var skills = $('input[name="skills"]', household).val();
   var education = $("select :selected", household).val();
 });
+
+// Create AyahAccount constructor
+function AyahAccount(fullName, emailAddress, phoneNumber, accountType, residence) {
+  this.fullName = fullName;
+  this.emailAddress = emailAddress;
+  this.phoneNumber = phoneNumber;
+  this.accountType = accountType;
+  this.residence = residence;
+}
+// Create a function to store account
+function registerAccount(account) {
+  ayahAccounts.push(account);
+  alert("Account Successfully Created!");
+}
+
 var slideIndex = 0;
 showSlides();
 
